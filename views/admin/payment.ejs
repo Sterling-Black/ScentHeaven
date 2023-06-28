@@ -13,6 +13,7 @@
                             <th>Phone Number</th>
                             <th>Parfum</th>
                             <th>Total Amount</th>
+                            <th>Payment Day</th>
                         </thead>
                         <tbody>
                             <% const acc = []; %>
@@ -25,7 +26,7 @@
 
                                     <% foundOrders.forEach((order,index)=>{  %>
 
-                                        <% const { customerName, customerPhone, parfumName, image, quantity, price, status, _id} = order; %>
+                                        <% const { customerName, customerPhone, parfumName, image, quantity, price, day, status, _id} = order; %>
 
                                         <% if (customerName == currentName && status) { %>
                                             <tr>
@@ -33,6 +34,7 @@
                                                 <td><%= customerPhone %></td>
                                                 <td> <img src="<%= image %>"> <br/> <p> <%= parfumName %> </p> </td>
                                                 <td><%= price %></td>
+                                                <td><%= day %></td>
                                             </tr>
                                         <% } %>
 

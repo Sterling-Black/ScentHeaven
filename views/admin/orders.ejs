@@ -15,6 +15,7 @@
                             <th>Parfum</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
+                            <th>Day of Order</th>
                             <th>Delivered/Paid</th>
                         </thead>
                         <tbody>
@@ -28,7 +29,7 @@
 
                                     <% foundOrders.forEach((order,index)=>{  %>
 
-                                        <% const { customerName, customerPhone, parfumName, image, quantity, price, status, _id} = order; %>
+                                        <% const { customerName, customerPhone, parfumName, image, quantity, price, day, status, _id} = order; %>
 
                                         <% if (customerName == currentName && !status) { %>
                                             <tr>
@@ -38,6 +39,7 @@
                                                 <td> <img src="<%= image %>"> <br/> <p> <%= parfumName %> </p> </td>
                                                 <td><%= quantity %></td>
                                                 <td><%= price %></td>
+                                                <td><%= day %></td>
                                                 <td><input type="checkbox" id="<%= _id %>"/></td>
                                             </tr>
                                         <% } %>
