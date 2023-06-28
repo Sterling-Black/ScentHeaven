@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -72,7 +72,7 @@ app.use(passport.session());
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser: true});
+mongoose.connect((process.env.MONGODB_URL||'mongodb://127.0.0.1/parfum'),{useNewUrlParser: true});
 
 const Product = mongoose.model("Product", productSchema);
 const Order = mongoose.model("Order", orderSchema);
