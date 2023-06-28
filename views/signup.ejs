@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Scent Heaven | Connexion</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="/"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Acceuil</a></li>
+                            <li><a href="/shop">Boutique</a></li>
+                            <li><a href="/contact">A Propos</a></li>                            
+                            <li><a>Payer</a>
+                                <ul class="dropdown">                                   
+                                    <li><a href="/cart">Panier</a></li>
+                                    <li><a href="/payemnt">payer le panier</a></li>                           
+                                </ul>
+                            </li>
+                            <li><a>Connexion</a>
+                                <ul class="dropdown">
+                                    <li><a href="/signup">S'inscrire</a></li>
+                                    <li><a href="/signin">Se connecter</a></li>                                    
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="center">
+      <h1>Inscription</h1>
+      <form method="post" action="/signup">
+        <!-- <div class="txt_field">
+          <input type="text" name="username" required>
+          <span></span>
+          <label>Nom d'utilisateur</label>
+        </div> -->
+        <div class="txt_field">
+            <input type="text" name="username" required>
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div class="txt_field">
+            <input type="text" name="phone" required>
+            <span></span>
+            <label>Numéro de telephone</label>
+          </div>
+        <div class="txt_field">
+          <input type="password" name="password" required>
+          <span></span>
+          <label>Mot de passe</label>
+        </div>
+        <div class="pass">Mot de passe oublier?</div>
+        <input type="submit" value="Signup">
+        <div class="signup_link">
+          Deja un compte <a href="/signin">Ouvrez le</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

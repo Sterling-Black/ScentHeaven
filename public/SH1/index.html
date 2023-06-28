@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scent Heaven </title>
+    <script src="./js.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- Offcanvas Menu Begin -->
+        <div class="offcanvas-menu-overlay"></div>
+        <div class="offcanvas-menu-wrapper">
+            <div class="offcanvas__close">+</div>
+            <ul class="offcanvas__widget">
+                <li><span class="icon_search search-switch"></span></li>
+                <li><a href="#"><span class="icon_heart_alt"></span>
+                    <div class="tip">2</div>
+                </a></li>
+                <li><a href="#"><span class="icon_bag_alt"></span>
+                    <div class="tip">2</div>
+                </a></li>
+            </ul>
+            <div class="offcanvas__logo">
+                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+            <div class="offcanvas__auth">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+        <!-- Offcanvas Menu End -->
+    <!--Barre de Navigation -->
+    
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Acceuil</a></li>
+                            <li><a href="Boutique.html">Boutique</a></li>
+                            <li><a href="#">A Propos</a></li>                            
+                            <li><a href="#">Payer</a>
+                                <ul class="dropdown">                                   
+                                    <li><a href="./shop-cart.html">Panier</a></li>
+                                    <li><a href="./checkout.html">payer le panier</a></li>                           
+                                </ul>
+                            </li>
+                            <li><a href="#">Connexion</a>
+                                <ul class="dropdown">
+                                    <li><a href="signin.html">S'inscrire</a></li>
+                                    <li><a href="#">Se connecter</a></li>                                    
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+<!-- Fin de la navigation-->
+
+<!--En tête-->
+<section class="hero row container">
+    <div class="hero-content column">
+        <div id="price">5000 FCFA</div>
+        <div id="name">Coco channel</div>
+        <div id="detail">La beauté et l'elégance commence par une bonne odeur</div>
+        <a href="#" class="content-btn">Ajouter au panier</a>
+    </div>
+    <div class="hero-right column">
+        <div class="big-circle row">
+            <div class="circle column" style="--total:8">
+                <div class="item column" data-number="0" style="--i:1">
+                  <img src="./img/img1.png" alt="Parfum coco"
+                   data-price="FCFA 5000"
+                   data-name="Dior Sauvage"
+                   data-description="Avec ce parfum vous serrez le roi de la soirée"
+                   data-color="#3b5b7c">
+                </div>
+                <div class="item column" data-number="1" style="--i:2">
+                    <img src="./img/img2.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Pacco Rabane"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="purple">
+                </div>
+                <div class="item column" data-number="2" style="--i:3">
+                    <img src="./img/img3.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="La Nuit Tresor"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#b43c45">
+                </div>
+                <div class="item column" data-number="3" style="--i:4">
+                    <img src="./img/img4.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Yves Saint Laurent"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#995e4b">
+                </div>
+                <div class="item column" data-number="4" style="--i:5">
+                    <img src="./img/img5.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Coco channel"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#8e605e">
+                </div>
+                <div class="item column" data-number="5" style="--i:6">
+                    <img src="./img/img6.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Chance Channel"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#d65a01">
+                </div>
+                <div class="item column" data-number="6" style="--i:7">
+                    <img src="./img/img7.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Givenchy L'interdit"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#a97670">
+                </div>
+                <div class="item column" data-number="7" style="--i:8">
+                    <img src="./img/img8.png" alt="Parfum coco"
+                     data-price="FCFA 5000"
+                     data-name="Emporio Armani You"
+                     data-description="Avec ce parfum vous serrez le roi de la soirée"
+                     data-color="#ab8954">
+                </div>                
+            </div>
+        </div>
+        <div class="btn-img row">
+            <div class="main-img">
+                <img src="./img/img2.png" alt="" class="parfum-list">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section Begin -->
+<!-- start features Area -->
+<section class="features-area section_gap">
+    <div class="container">
+        <div class="row features-inner">
+            <!-- single features -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-features">
+                    <div class="f-icon">
+                        <img src="img/features/f-icon1.png" alt="">
+                    </div>
+                    <h6>Livraison Rapide</h6>
+                    <p>Livraison Sous 24H</p>
+                </div>
+            </div>
+            <!-- single features -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-features">
+                    <div class="f-icon">
+                        <img src="img/features/f-icon2.png" alt="">
+                    </div>
+                    <h6>Politique De Retour</h6>
+                    <p>Il est possible de nous renvoyer un parfum</p>
+                </div>
+            </div>
+            <!-- single features -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-features">
+                    <div class="f-icon">
+                        <img src="img/features/f-icon3.png" alt="">
+                    </div>
+                    <h6>24/7 Support</h6>
+                    <p>Nous somme là pour vous écouter</p>
+                </div>
+            </div>
+            <!-- single features -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-features">
+                    <div class="f-icon">
+                        <img src="img/features/f-icon4.png" alt="">
+                    </div>
+                    <h6>Paiements Sécurisés</h6>
+                    <p>Payez sans crainte</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+<!--fin de l'en tête-->
+    <div class="heading">
+        <h2>CATEGORIES</h2>
+    </div>
+       
+<!--Catégories-->
+<section class="categories">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <div class="categories__item categories__large__item set-bg"
+                data-setbg="img/categories/category-1.jpg">
+                <div class="categories__text">
+                    <h1>HEAVEN SELECTION</h1>
+                    <p>Notre équipe d'expert a pris le soin de selectioner parmis notre grande varieté
+                        de parfum premium les meilleurs pour vous.
+                    </p>
+                    <a href="Boutique.html">Voir plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 bg-one">
+                    <div class="categories__item set-bg" data-setbg="./img/cat2">
+                        <div class="categories__text">
+                            <h4>Pour LUI</h4>
+                            <p>358 Parfums</p><!--While codeing the backend add a count in fonction of the amount in stock-->
+                            <a href="Boutique.html">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 bg-two">
+                    <div class="categories__item set-bg" data-setbg="img/categories/category-3.jpg">
+                        <div class="categories__text">
+                            <h4>Pour les plus petits</h4>
+                            <p>273 Parfums</p><!--While codeing the backend add a count in fonction of the amount in stock-->
+                            <a href="Boutique.html">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 bg-three">
+                    <div class="categories__item set-bg" data-setbg="img/categories/category-4.jpg">
+                        <div class="categories__text">
+                            <h4>Offrez leur</h4>
+                            <p>159 Parfums</p><!--While codeing the backend add a count in fonction of the amount in stock-->
+                            <a href="Boutique.html">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 bg-four">
+                    <div class="categories__item set-bg" data-setbg="img/categories/category-5.jpg">
+                        <div class="categories__text">
+                            <h4>Pour ELLE</h4>
+                            <p>792 Parfums</p><!--While codeing the backend add a count in fonction of the amount in stock-->
+                            <a href="Boutique.html">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!--Fin des catégories-->
+
+<!--Feedback-->
+<footer>
+   
+      <div class="footer-content">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de ma boutique de parfum">
+          </div>
+          
+        <div class="categories">
+          <h3>Catégories</h3>
+          <ul>
+            <li><a href="#">Pour LUI</a></li>
+            <li><a href="#">Pour ELLE</a></li>
+            <li><a href="#">Offrez Leur</a></li>
+            <li><a href="#">Pour Les Plus Petits</a></li>            
+          </ul>
+        </div>
+        <div class="about">
+          <h3>À propos</h3>
+          <p>Nous sommes une boutique en ligne de parfums de qualité, proposant une sélection soigneusement choisie de parfums pour femmes, hommes et unisexes, ainsi que des parfums de niche. Nous sommes passionnés par les parfums et nous nous engageons à offrir à nos clients une expérience d'achat agréable et personnalisée.</p>
+        </div>
+        <div class="contact">
+          <h3>Contact</h3>
+          <p>123 Rue Principale<br>Ville, Province<br>Pays, Code postal</p>
+          <p>Téléphone : 123-456-7890<br>Email : info@monentreprise.com</p>
+        </div>
+      </div>
+   
+    <p>&copy; 2023 SCENT HEAVEN - Tous droits réservés</p>
+  </footer>
+  
+<!--Fin des feedback-->
+</body>
+</html>

@@ -1,0 +1,109 @@
+<%- include("partials/header") %>
+
+
+
+<section class="scrollable wrapper">
+    <div class="row">
+        <section>
+            <div class="wrapper">
+                    <div class="title">
+                        Products
+                    </div>
+                    <div class="t-bg">
+                        <table>
+                            <thead>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Color</th>
+                                <th>Price(FCFA)</th>
+                                <th>Quantity</th>
+                                <th>Modify</th>
+                            </thead>
+                            <tbody>
+                                <% if(foundPrdts){ %>
+                                    <% foundPrdts.forEach((prdt)=>{ %>
+                                        <% const {_id ,name, price, quantity, color, image} = prdt; %>
+                                        <tr>
+                                            <td class="prdt-id"><%=_id%></td>
+                                            <td class="prdt-image"><img src="<%=image%>"></td>
+                                            <td class="prdt-name"><%= name %></td>
+                                            <td class="prdt-color">
+                                                <div class="item-color" style="background-color: <%= color %>;"></div>
+                                            </td>
+                                            <td class="prdt-price"><%= price %></td>
+                                            <td class="prdt-quantity"><%= quantity%></td>
+                                            <td>
+                                                <button class="update">update</button>
+                                                <button class="delete">delete</button>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                <% } %>
+                            </tbody>
+                        </table>
+                        <button class="add-btn">+ Add new product</button>
+                    </div>
+                </div>
+        </section>
+    </div>
+</section>
+</section>
+<!-- <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> -->
+</section>
+<!-- /.vbox -->
+</section>
+<section class="modal mody">
+<div class="modal-content">
+<h1 class="sub-title">Add new product</h1>
+<i class="uil uil-times modal-close"></i>
+<!-- <div class="my-img-container"> -->
+<form action="/update" method="post" class="form-modal" enctype="multipart/form-data">
+    <input type="text" name="id" id="update-id" hidden>
+    <div style="display:grid;">
+        <label for="color">Name:</label>
+        <input type="text" name="name" class="input-text" id="text" required>
+    </div>
+    <input type="file" accept="image/*" name="image" value="select" id="my-img" onchange="uploadAvatar(event)" hidden required>
+    <div class="my-img-container">
+        <img class="my-img" src="/img/defaultL.png" alt="">
+        <div class="camera">
+            <i class="fa-solid fa-camera" id="camera"></i>
+        </div>
+    </div>
+    <div style="display:grid;">
+        <label for="color">Quantity:</label>
+        <input type="number" name="quantity" id="" min="0" max="100" value="10" class="input-text num-qty" required>
+    </div>
+    <div style="display:grid;">
+        <label for="color">Price:</label>
+        <input type="number" name="price" id="" min="500" step="500" value="2500" class="input-text num-price" required>
+    </div>
+    <div style="display:grid;">
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color" value="#404e68" class="input-text" required>
+    </div>
+    <button type="submit" class="submit">Add the Product</button>
+</form>
+<!-- </div> -->
+</div>
+</section>
+<section class="modal delt">
+<div class="modal-content">
+This action will completely delete the item from the shop. Are you sure you want to delete it?
+
+<form action="/delete" method="post" class="opt">
+    <input type="text" name="id" id="delete-id" hidden>
+    <button class="yes" type="submit">Yes</button>
+    <button class="no">No</button>
+</form>
+
+</div>
+</section>
+<script src="/js/index.js"></script>
+<script src="/js/myIndex.js" defer></script>
+<!-- Bootstrap -->
+<!-- Sparkline Chart -->
+<!-- App -->
+</body>
+</html>

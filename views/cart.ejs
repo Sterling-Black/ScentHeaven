@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Scent Heaven | Panier</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/logo.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <script type="">
+        const prdts = <%- JSON.stringify(prdts) %>;
+
+        const cartItems = [];
+
+        const cartArray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+
+        const items = [];
+
+		cartArray.forEach((id)=>{
+            prdts.forEach((prdt)=>{
+                if(prdt._id == id ){
+                    if(cartItems.includes(prdt)){
+                        //find the item in the items array and increments its count
+                        const index = cartItems.indexOf(prdt);
+                        items[index].count ++;
+                    }else{
+                        items.push({prdt: prdt, count: 1});
+                        cartItems.push(prdt);
+                    }
+                }
+            });
+        });
+        
+        console.log(items);
+        // const arr = [1, 2, 3, 2, 4, 2, 5, 6, 2, 7];
+        // const valueToCount = 2;
+
+
+        // cartItems.forEach(itm=>{
+        //     const count = cartItems.reduce((acc, val) => {
+        //         return val === itm ? acc + 1 : acc;
+        //     }, 0);
+
+        //     console.log(count); // Output: 4
+        // });
+
+        
+    </script>
+
+    <nav class="fh5co-nav" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-2">
+                    <div id="fh5co-logo"><a href="/">scent heaven.</a></div>
+                </div>
+                <div class="col-md-6 col-xs-6 text-center menu-1">
+                    <ul>
+                        
+                        <li><a href="/">Acceuil</a></li>       
+                        
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+                    <ul>
+                        <li class="search">
+                            <div class="input-group">
+                            <input type="text" placeholder="Chercher">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                            </span>
+                            </div>
+                        </li>
+                        <li class="shopping-cart"><a href="/cart" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+
+       
+        <!-- ****** Top Discount Area End ****** -->
+
+        <!-- ****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Parfum</th>
+                                        <th>Prix</th>
+                                        <th>Quantité</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cart-footer d-flex mt-30">
+                            <div class="back-to-shop w-50">
+                                <a href="/shop">Continuer mes courses</a>
+                            </div>
+                            <div class="update-checkout w-50 text-right">
+                                <a href="#" onclick="cleanUp()">Effacer le panier</a>
+                                <a href="/cart">Mettre à jour</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="coupon-code-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Code de reduction</h5>
+                                <p>Entrez un code promo</p>
+                            </div>
+                            <form action="#">
+                                <input type="search" name="search" placeholder="#569ab15">
+                                <button type="submit">Appliquer</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="shipping-method-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Livraison</h5>
+                                <p>Choissisez un mode de Livraison</p>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <!-- <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"> -->
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Express</span><span>2000 FCFA</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <!-- <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"> -->
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Livraison standard</span><span>1000 FCFA</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <!-- <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input"> -->
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Personal Pickup</span><span>Free</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Total du panier</h5>
+                                <p>Info</p>
+                            </div>
+
+                            <ul class="cart-total-chart">                                
+                                <li><span>Livraison</span> <span>Offerte</span></li>
+                                <li><span><strong>Total</strong></span> <span><strong id="total">5000 FCFA</strong></span></li>
+                            </ul>
+
+                            <button onclick="submit()" class="btn karl-checkout-btn">Passer la commande</button>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ****** Cart Area End ****** -->
+
+        <!-- ****** Footer Area Start ****** -->  
+                    <footer>
+   
+                        <div class="footer-content">
+                          <div class="logo">
+                              <img src="img/logo.png" alt="Logo de ma boutique de parfum">
+                            </div>
+                            
+                          <div class="categories">
+                            <h3>Catégories</h3>
+                            <ul>
+                              <li><a href="#">Pour LUI</a></li>
+                              <li><a href="#">Pour ELLE</a></li>
+                              <li><a href="#">Offrez Leur</a></li>
+                              <li><a href="#">Pour Les Plus Petits</a></li>            
+                            </ul>
+                          </div>
+                          <div class="about">
+                            <h3>À propos</h3>
+                            <p>Nous sommes une boutique en ligne de parfums de qualité, proposant une sélection soigneusement choisie de parfums pour femmes, hommes et unisexes, ainsi que des parfums de niche. Nous sommes passionnés par les parfums et nous nous engageons à offrir à nos clients une expérience d'achat agréable et personnalisée.</p>
+                          </div>
+                          <div class="contact">
+                            <h3>Contact</h3>
+                            <p>123 Rue Principale<br>Ville, Province<br>Pays, Code postal</p>
+                            <p>Téléphone : 123-456-7890<br>Email : info@monentreprise.com</p>
+                          </div>
+                        </div>
+                     
+                      <p>&copy; 2023 SCENT HEAVEN - Tous droits réservés</p>
+                    </footer>
+        <!-- ****** Footer Area End ****** -->
+    </div>
+    <section class="modal command">
+        <div class="modal-content">
+            Votre comman vas etre envoyer au vendeur. Contacter le pour pouvoit recevoir votre Livraison.
+            <form action="/pass-order" method="post" class="opt">
+                <input type="text" name="productsId" class="prdt-input" hidden/>
+                <button type="submit" id="submit" class="no">Ok</button>
+            </form>
+            <h3>contact du vendeur: +237 678 867 746</h3>
+        </div>
+    </section>
+                
+    <!-- /.wrapper end -->
+    <script>
+        function minus(ele){
+            const elem = ele.closest("tr");
+            const id = elem.id;
+            
+            var effect = ele.closest('.qty').querySelector("#qty"); 
+            var qty = effect.value;
+             if(qty>0){
+                 effect.value--;
+                 updateCart(false,id);
+             }
+
+            return false;
+        }
+        function plus(ele){
+            const elem = ele.closest("tr");
+            const id = elem.id;
+
+            var effect = ele.closest('.qty').querySelector("#qty"); 
+            var qty = effect.value; 
+            effect.value++;
+            updateCart(true,id);
+            
+            return false;
+        }
+
+        const aray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+
+        const count = aray?aray.length:0;
+        const small = document.querySelector(".shopping-cart small");
+        small.textContent = count;
+        const Total = document.querySelector("#total");
+        const cartArea = document.querySelector("table tbody");
+
+        let cout = 0;
+
+        if(items){ 
+            items.forEach(({prdt ,count}, index)=>{ 
+
+                const {image, name, price, _id, quantity} = prdt;
+
+                cout += quantity*price;
+
+                cartArea.innerHTML += 
+                                    `<tr id=${_id}>
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href="#"><img src="${image}" alt="${name}"></a>
+                                            <h6>${name}</h6>
+                                        </td>
+                                        <td class="price"><span>${price} FCFA</span></td>
+                                        <td class="qty">
+                                            <div class="quantity">
+                                                <span class="qty-minus" onclick="minus(this)">-</span>
+                                                <input type="number" class="qty-text" id="qty" step="1" min="0" max="${quantity}" name="quantity" value="${count}">
+                                                <span class="qty-plus" onclick="plus(this)">+</span>
+                                            </div>
+                                        </td>
+                                        <td class="total_price"><span>${name} FCFA</span></td>
+                                    </tr>`
+            });
+        }
+        Total.textContent = cout + " FCFA";
+
+        function updateCart(increament, id){
+
+            let cartArray = [];
+            
+            //if an item is added
+            if(increament){
+
+                // If javascript shopping cart session is not empty
+                if (sessionStorage.getItem('shopping-cart')) {
+                    cartArray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+                }
+
+                //add item id to array
+                cartArray.push(id);
+                
+        
+            //if an item is removed
+            }else{
+
+                // If javascript shopping cart session is not empty
+                if (sessionStorage.getItem('shopping-cart')) {
+                    cartArray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+                }
+                //remove element once is present
+                const index = cartArray.indexOf(id);
+                if(index>-1){
+                    cartArray.splice(index,1);
+                }
+
+            }
+            
+            const cartJSON = JSON.stringify(cartArray);
+            sessionStorage.setItem('shopping-cart', cartJSON);
+
+            // change number of items in cart
+            const {length} = cartArray;
+            small.textContent = length;
+
+            items.length = 0;
+            cartItems.length = 0;
+
+            cartArray.forEach((sId)=>{
+                prdts.forEach((prdt)=>{
+                    if(prdt._id == sId ){
+                        if(cartItems.includes(prdt)){
+                            //find the item in the items array and increments its count
+                            const index = cartItems.indexOf(prdt);
+                            items[index].count ++;
+                        }else{
+                            items.push({prdt: prdt, count: 1});
+                            cartItems.push(prdt);
+                        }
+                    }
+                });
+            });
+
+
+            findTot();
+        }
+
+        function findTot(){
+            let cout = 0; 
+            items.forEach(({prdt, count})=>{
+                const {price} = prdt;
+                cout += price*count;
+            })
+
+            Total.textContent = cout + " FCFA";
+        }
+
+        function submit(){
+            const cartItemsId =  sessionStorage.getItem('shopping-cart');
+            if(cartItemsId){
+                document.querySelector('.prdt-input').value = cartItemsId;
+                document.querySelector('.command').classList.add('active-modal');
+            }else{
+                alert('Your cart is empty, you can\'t pass a command if you don\'t have anything to buy');
+            }
+        }
+        document.querySelector('.modal').addEventListener('click',()=>{
+            document.querySelector('.modal').classList.add('.active-modal');
+        })
+
+        function cleanUp(){
+            sessionStorage.setItem('shopping-cart','');
+            document.querySelectorAll('.quantity input[type="number"]').forEach((prdt)=>{
+                prdt.value = 0;
+            });
+            small.textContent = 0;
+            items.length = 0;
+            cartItems.length = 0;
+            Total.textContent = "0 FCFA";
+        }
+
+    </script>
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<%- include("partials/header") %>
+
+<section class="scrollable wrapper">
+    <div class="row">
+        <section>
+            <div class="wrapper">
+                    <div class="title">
+                        Payments
+                    </div>
+                    <table>
+                        <thead>
+                            <th>Customer name</th>
+                            <th>Phone Number</th>
+                            <th>Parfum</th>
+                            <th>Total Amount</th>
+                        </thead>
+                        <tbody>
+                            <% const acc = []; %>
+                            <% foundOrders.forEach((currentOrder,index)=>{ %>
+                                <% const currentName = currentOrder.customerName; %>
+
+                                <% if (!acc.includes(currentName)) { %>
+
+                                    <% acc.push(currentName); %>
+
+                                    <% foundOrders.forEach((order,index)=>{  %>
+
+                                        <% const { customerName, customerPhone, parfumName, image, quantity, price, status, _id} = order; %>
+
+                                        <% if (customerName == currentName && status) { %>
+                                            <tr>
+                                                <td><%= customerName %></td>
+                                                <td><%= customerPhone %></td>
+                                                <td> <img src="<%= image %>"> <br/> <p> <%= parfumName %> </p> </td>
+                                                <td><%= price %></td>
+                                            </tr>
+                                        <% } %>
+
+                                    <% }); %>
+                                <% } %>
+
+                            <% }); %>
+                        </tbody>
+                    </table>
+            </div>
+        </section>
+    </div>
+</section>
+</section>
+</section>
+<!-- /.vbox -->
+</section>
+<script src="/js/index.js"></script>
+<!-- Bootstrap -->
+<!-- Sparkline Chart -->
+<!-- App -->
+</body>
+</html>
