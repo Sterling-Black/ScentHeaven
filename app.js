@@ -35,8 +35,7 @@ const userSchema = mongoose.Schema({
     name: String,
     password: String,
     googleId: String,
-    // facebookId: String,
-    phone: Number,
+    phone: String,
     orders: Number,
 });
 
@@ -50,7 +49,7 @@ const productSchema = mongoose.Schema({
 
 const orderSchema = mongoose.Schema({
     customerName: String,
-    customerPhone: Number,
+    customerPhone: String,
     parfumName: String,
     image: String,
     quantity: Number,
