@@ -385,6 +385,7 @@ app.get("/admin/dashboard",async (req,res)=>{
             totalOrders,
             totalPayments,
             totalProfit,
+            thisMonth: month
         });
 
     }else{
